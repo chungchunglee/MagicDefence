@@ -1,0 +1,241 @@
+
+skeleton.png
+size: 2046,1812
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Imfact/전기-1
+  rotate: true
+  xy: 592, 1418
+  size: 241, 244
+  orig: 241, 244
+  offset: 0, 0
+  index: -1
+Imfact/전기-2.
+  rotate: false
+  xy: 1231, 1293
+  size: 351, 347
+  orig: 351, 347
+  offset: 0, 0
+  index: -1
+Imfact/전기-3
+  rotate: false
+  xy: 1584, 1254
+  size: 460, 386
+  orig: 460, 386
+  offset: 0, 0
+  index: -1
+Imfact/전기-4
+  rotate: true
+  xy: 2, 188
+  size: 538, 505
+  orig: 538, 505
+  offset: 0, 0
+  index: -1
+L-망토
+  rotate: true
+  xy: 541, 929
+  size: 386, 630
+  orig: 386, 630
+  offset: 0, 0
+  index: -1
+L-망토-그림자
+  rotate: true
+  xy: 1352, 2
+  size: 487, 653
+  orig: 487, 653
+  offset: 0, 0
+  index: -1
+L-망토-장신구
+  rotate: true
+  xy: 2, 1722
+  size: 88, 131
+  orig: 88, 131
+  offset: 0, 0
+  index: -1
+R-망토
+  rotate: true
+  xy: 2, 728
+  size: 395, 534
+  orig: 395, 534
+  offset: 0, 0
+  index: -1
+R-망토-그림자
+  rotate: true
+  xy: 2, 1125
+  size: 375, 537
+  orig: 375, 537
+  offset: 0, 0
+  index: -1
+R-망토-장신구
+  rotate: true
+  xy: 135, 1712
+  size: 98, 146
+  orig: 98, 146
+  offset: 0, 0
+  index: -1
+레이어 125
+  rotate: true
+  xy: 218, 1502
+  size: 178, 192
+  orig: 178, 192
+  offset: 0, 0
+  index: -1
+머리
+  rotate: true
+  xy: 1584, 642
+  size: 610, 455
+  orig: 610, 455
+  offset: 0, 0
+  index: -1
+목걸이
+  rotate: false
+  xy: 509, 89
+  size: 841, 400
+  orig: 841, 400
+  offset: 0, 0
+  index: -1
+목걸이-그림자
+  rotate: false
+  xy: 538, 491
+  size: 857, 388
+  orig: 857, 388
+  offset: 0, 0
+  index: -1
+손
+  rotate: false
+  xy: 838, 1317
+  size: 391, 340
+  orig: 391, 340
+  offset: 0, 0
+  index: -1
+손-핵
+  rotate: false
+  xy: 412, 1502
+  size: 178, 178
+  orig: 178, 178
+  offset: 0, 0
+  index: -1
+손가락-1
+  rotate: true
+  xy: 2, 1538
+  size: 172, 214
+  orig: 172, 214
+  offset: 0, 0
+  index: -1
+손가락-2
+  rotate: false
+  xy: 826, 1661
+  size: 206, 149
+  orig: 206, 149
+  offset: 0, 0
+  index: -1
+손가락-3
+  rotate: false
+  xy: 1240, 1655
+  size: 216, 155
+  orig: 216, 155
+  offset: 0, 0
+  index: -1
+손가락-4
+  rotate: false
+  xy: 1034, 1659
+  size: 204, 151
+  orig: 204, 151
+  offset: 0, 0
+  index: -1
+왕관 그림자
+  rotate: false
+  xy: 1458, 1642
+  size: 513, 168
+  orig: 513, 168
+  offset: 0, 0
+  index: -1
+왕관-밑둥
+  rotate: false
+  xy: 283, 1682
+  size: 541, 128
+  orig: 541, 128
+  offset: 0, 0
+  index: -1
+핵
+  rotate: false
+  xy: 1173, 881
+  size: 409, 410
+  orig: 409, 410
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 1701,1964
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Imfact/전기-6
+  rotate: false
+  xy: 1073, 43
+  size: 626, 1919
+  orig: 626, 1919
+  offset: 0, 0
+  index: -1
+Imfact/전기-7
+  rotate: false
+  xy: 2, 2
+  size: 1069, 1960
+  orig: 1069, 1960
+  offset: 0, 0
+  index: -1
+
+skeleton3.png
+size: 1710,1941
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Imfact/L - 연기
+  rotate: false
+  xy: 548, 435
+  size: 931, 573
+  orig: 931, 573
+  offset: 0, 0
+  index: -1
+Imfact/전기-5
+  rotate: false
+  xy: 2, 2
+  size: 544, 1937
+  orig: 544, 1937
+  offset: 0, 0
+  index: -1
+몸통
+  rotate: false
+  xy: 548, 1010
+  size: 1030, 929
+  orig: 1030, 929
+  offset: 0, 0
+  index: -1
+지팡이
+  rotate: true
+  xy: 548, 14
+  size: 419, 1160
+  orig: 419, 1160
+  offset: 0, 0
+  index: -1
+
+skeleton4.png
+size: 1603,613
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Imfact/R-연기
+  rotate: false
+  xy: 2, 38
+  size: 931, 573
+  orig: 931, 573
+  offset: 0, 0
+  index: -1
+왕관-위
+  rotate: true
+  xy: 935, 2
+  size: 609, 666
+  orig: 609, 666
+  offset: 0, 0
+  index: -1
