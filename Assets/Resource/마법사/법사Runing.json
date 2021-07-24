@@ -6,8 +6,7 @@
 	"y": 60.79,
 	"width": 659.77,
 	"height": 1458.29,
-	"images": "J:/포트폴리오/포폴_그림/마법사/",
-	"audio": "J:/포트폴리오/포폴_그림/마법사"
+	"images": "C:\\UnityWorkspace\\MagicDefence\\Assets\\Resource\\마법사\\이미지"
 },
 "bones": [
 	{ "name": "root", "scaleX": 0.3983, "scaleY": 0.3983 },
