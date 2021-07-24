@@ -1,0 +1,69 @@
+
+skeleton.png
+size: 1037,1076
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L-발
+  rotate: true
+  xy: 703, 409
+  size: 122, 139
+  orig: 122, 139
+  offset: 0, 0
+  index: -1
+R-발
+  rotate: true
+  xy: 844, 412
+  size: 119, 136
+  orig: 119, 136
+  offset: 0, 0
+  index: -1
+몸
+  rotate: false
+  xy: 178, 388
+  size: 523, 686
+  orig: 523, 686
+  offset: 0, 0
+  index: -1
+방패
+  rotate: true
+  xy: 178, 2
+  size: 384, 450
+  orig: 384, 450
+  offset: 0, 0
+  index: -1
+손
+  rotate: false
+  xy: 703, 533
+  size: 152, 208
+  orig: 152, 208
+  offset: 0, 0
+  index: -1
+얼굴
+  rotate: false
+  xy: 630, 12
+  size: 405, 374
+  orig: 405, 374
+  offset: 0, 0
+  index: -1
+창
+  rotate: false
+  xy: 2, 71
+  size: 174, 1003
+  orig: 174, 1003
+  offset: 0, 0
+  index: -1
+하이라이트
+  rotate: false
+  xy: 857, 570
+  size: 109, 171
+  orig: 109, 171
+  offset: 0, 0
+  index: -1
+핵
+  rotate: false
+  xy: 703, 743
+  size: 331, 331
+  orig: 331, 331
+  offset: 0, 0
+  index: -1

@@ -6,8 +6,7 @@
 	"y": -4372.14,
 	"width": 9259.72,
 	"height": 9535.74,
-	"images": "../작업중/젤리 병사/images/",
-	"audio": "C:/Users/오동훈/Desktop/포트폴리오/작업중/젤리 병사"
+	"images": "C:/UnityWorkspace/MagicDefence/Assets/Resource/WeakMonster/images",
 },
 "bones": [
 	{ "name": "root", "x": 3.21, "y": 160.79 },

@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c2be686-0658-43ea-aae3-468750587521" name="Default Changelist" comment="첫번째 커밋" />
+    <list default="true" id="4c2be686-0658-43ea-aae3-468750587521" name="Default Changelist" comment="첫번째 커밋">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite-journal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/마법사/New SkeletonDataAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/마법사/New SkeletonDataAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/마법사/법사Runing.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource/마법사/법사Runing.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사/New SkeletonDataAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사/New SkeletonDataAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사/skeleton.atlas.text" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사/skeleton.atlas.text.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사/skeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource/젤리병사/skeleton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/New SkeletonDataAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/New SkeletonDataAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/skeleton.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/skeleton.atlas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/skeleton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/skeleton.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리왕/New SkeletonDataAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리왕/New SkeletonDataAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리왕/skeleton.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/젤리왕/skeleton.atlas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +40,11 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Script/MonsterManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/SceneManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resource/젤리병사/skeleton.json" />
+      <option value="$PROJECT_DIR$/Assets/Resource/WeakMonster/skeleton.json" />
+      <option value="$PROJECT_DIR$/Assets/Resource/젤리병사라이딩/skeleton.json" />
+      <option value="$PROJECT_DIR$/Assets/Resource/마법사/법사Runing.json" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1viehEW3J9JXV97Snb5ZjBqk4CS" />
@@ -65,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627049457039</updated>
       <workItem from="1627049469975" duration="1518000" />
-      <workItem from="1627086105940" duration="6746000" />
+      <workItem from="1627086105940" duration="10650000" />
     </task>
     <task id="LOCAL-00001" summary="첫번째 커밋">
       <created>1627101355154</created>
