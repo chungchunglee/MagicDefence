@@ -14,7 +14,7 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
+        /*if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (Input.GetMouseButtonDown(0))    // 추후 메뉴 버튼을 누르면 전환
             {
@@ -27,6 +27,6 @@ public class SceneManager : MonoBehaviour
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainWindow");
             }
-        }
+        }*/
     }
 }
