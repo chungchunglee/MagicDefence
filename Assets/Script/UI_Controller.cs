@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class UI_Controller : MonoBehaviour
 {
-
-
+    public void OnClickSkill1Button()
+    {
+        Debug.Log("Skill 1 Click");
+    }
     // Start is called before the first frame update
     void Start()
     {

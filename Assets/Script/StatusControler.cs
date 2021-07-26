@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class StatusControler : MonoBehaviour
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
