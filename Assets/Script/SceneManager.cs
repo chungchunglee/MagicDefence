@@ -1,32 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+namespace Script
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SceneManager : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
+        // Start is called before the first frame update
+        void Start()
         {
-            if (Input.GetMouseButtonDown(0))    // 추후 메뉴 버튼을 누르면 전환
+        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void SceneChange()
+        {
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("InGame");
             }
-        }
-        else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            if (Input.GetMouseButtonDown(0))    // 추후 메뉴 버튼을 누르면 전환
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainWindow");
             }
-        }*/
+        }
     }
 }

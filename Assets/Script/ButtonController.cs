@@ -1,3 +1,4 @@
+using System;
 using Spine.Unity;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Script
     public class ButtonController : MonoBehaviour
     {
         private SkeletonAnimation _skeletonAnimation;
+        private SpriteRenderer _spriteRenderer;
     
         public bool leftMove = false;
         public bool rightMove = false;
@@ -16,6 +18,7 @@ namespace Script
         private void Start()
         {
             _skeletonAnimation = GetComponent<SkeletonAnimation>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -25,13 +28,27 @@ namespace Script
             {
                 _moveVelocity = new Vector3(-1, 0, 0);
                 transform.position += _moveVelocity * (MoveSpeed * Time.deltaTime);
-                _skeletonAnimation.skeleton.ScaleX = -Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
+                try
+                {
+                    _skeletonAnimation.skeleton.ScaleX = -Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
+                }
+                catch(NullReferenceException ex)
+                {
+                    _spriteRenderer.flipX = true;
+                }
             }
             else if(rightMove)
             {
                 _moveVelocity = new Vector3(1, 0, 0);
                 transform.position += _moveVelocity * (MoveSpeed * Time.deltaTime);
-                _skeletonAnimation.skeleton.ScaleX = Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
+                try
+                {
+                    _skeletonAnimation.skeleton.ScaleX = Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
+                }
+                catch(NullReferenceException ex)
+                {
+                    _spriteRenderer.flipX = false;
+                }
             }
         }
     }
