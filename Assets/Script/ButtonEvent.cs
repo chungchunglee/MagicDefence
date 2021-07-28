@@ -5,13 +5,13 @@ namespace Script
 {
     public class ButtonEvent : MonoBehaviour
     {
-        private List<ButtonController> _buttonController = new List<ButtonController>();
+        private readonly List<ButtonController> _buttonController = new List<ButtonController>();
     
         // Start is called before the first frame update
         private void Start()
         {
-            GameObject magician = GameObject.Find("Magician Player");
-            GameObject supporter = GameObject.Find("Supporter");
+            var magician = GameObject.Find("Magician Player");
+            var supporter = GameObject.Find("Supporter");
             _buttonController.Add(magician.GetComponent<ButtonController>());
             _buttonController.Add(supporter.GetComponent<ButtonController>());
         }

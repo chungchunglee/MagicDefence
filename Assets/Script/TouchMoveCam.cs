@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Script
@@ -10,30 +11,37 @@ namespace Script
         private Camera _camera;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             Screen.orientation = ScreenOrientation.Landscape; // 화면을 가로로 고정
             _camera = GetComponent<Camera>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if(Input.touchCount == 1)
+            if (Input.touchCount != 1) return;
+            var touch = Input.GetTouch (0);
+            switch (touch.phase)
             {
-                Touch touch = Input.GetTouch (0);
-                if(touch.phase == TouchPhase.Began)
-                {
+                case TouchPhase.Began:
                     _prePos = touch.position - touch.deltaPosition;
-                }
-                else if(touch.phase == TouchPhase.Moved)
-                {
+                    break;
+                case TouchPhase.Moved:
                     _nowPos = touch.position - touch.deltaPosition;
                     _movePos = (Vector3)(_prePos - _nowPos) * (Time.deltaTime * Speed);
                     _movePos = new Vector3(_movePos.x, 0, 0); // x 축만 움직이게 고정
                     _camera.transform.Translate(_movePos); 
                     _prePos = touch.position - touch.deltaPosition;
-                }
+                    break;
+                case TouchPhase.Stationary:
+                    break;
+                case TouchPhase.Ended:
+                    break;
+                case TouchPhase.Canceled:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }

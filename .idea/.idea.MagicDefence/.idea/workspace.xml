@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c2be686-0658-43ea-aae3-468750587521" name="Default Changelist" comment="" />
+    <list default="true" id="4c2be686-0658-43ea-aae3-468750587521" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ButtonEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ButtonEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/TouchMoveCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/TouchMoveCam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +20,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Unity/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/TouchMoveCam.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -25,9 +34,13 @@
       <option value="$PROJECT_DIR$/Assets/Script/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/ButtonController.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/ButtonEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Script/TouchMoveCam.cs" />
-      <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/SceneManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/TouchMoveCam.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/SpawnerLaucher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/SpawnerLauncher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/Spawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/Monster.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1viehEW3J9JXV97Snb5ZjBqk4CS" />
@@ -51,10 +64,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2552">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2552" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -85,6 +98,7 @@
       <workItem from="1627257496747" duration="1273000" />
       <workItem from="1627298056769" duration="5601000" />
       <workItem from="1627346858182" duration="633000" />
+      <workItem from="1627474166799" duration="11032000" />
     </task>
     <task id="LOCAL-00001" summary="첫번째 커밋">
       <created>1627101355154</created>
