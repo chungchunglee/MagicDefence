@@ -1,17 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script
 {
     public class ButtonEvent : MonoBehaviour
     {
-        private GameObject _button;
-        private ButtonController _buttonController;
+        private readonly List<ButtonController> _buttonController = new List<ButtonController>();
     
         // Start is called before the first frame update
         private void Start()
         {
-            _button = GameObject.Find("Supporter");
-            _buttonController = _button.GetComponent<ButtonController>();
+            var magician = GameObject.Find("Magician Player");
+            var supporter = GameObject.Find("Supporter");
+            _buttonController.Add(magician.GetComponent<ButtonController>());
+            _buttonController.Add(supporter.GetComponent<ButtonController>());
         }
 
         // Update is called once per frame
@@ -22,19 +24,31 @@ namespace Script
     
         public void LeftBtnDown()
         {
-            _buttonController.leftMove = true;
+            foreach (var variable in _buttonController)
+            {
+                variable.leftMove = true;
+            }
         }
         public void LeftBtnUp()
         {
-            _buttonController.leftMove = false;
+            foreach (var variable in _buttonController)
+            {
+                variable.leftMove = false;
+            }
         }
         public void RightBtnDown()
         {
-            _buttonController.rightMove = true;
+            foreach (var variable in _buttonController)
+            {
+                variable.rightMove = true;
+            }
         }
         public void RightBtnUp()
         {
-            _buttonController.rightMove = false;
+            foreach (var variable in _buttonController)
+            {
+                variable.rightMove = false;
+            }
         }
     }
 }
