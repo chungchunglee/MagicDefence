@@ -6,7 +6,7 @@ namespace Script
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 5f;
-        public float _hp = 5f;
+        public float hp = 5f;
 
         // Start is called before the first frame update
         private void Start()
@@ -23,8 +23,8 @@ namespace Script
 
         public void OnDamaged(float damage)
         {
-            _hp -= damage;
-            if (_hp == 0)
+            hp -= damage;
+            if (hp == 0)
                 OnDestroy();
         }
 
