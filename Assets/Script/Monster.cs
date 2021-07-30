@@ -13,8 +13,8 @@ namespace Script
 
         public Action<float> attack;
 
-        private bool attacking = false;
-        
+        private bool _attacking = false;
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -25,7 +25,7 @@ namespace Script
         // Update is called once per frame
         private void Update()
         {
-            if (attacking != false) return;
+            if (_attacking != false) return;
             var transform1 = transform;
             transform1.position += (-transform1.right) * (moveSpeed * Time.deltaTime);
         }
@@ -37,7 +37,7 @@ namespace Script
                 _skeletonAnimation.AnimationName = "Attack";
             }
 
-            attacking = true;
+            _attacking = true;
             
             StartCoroutine(AttackCoroutine());
         }
@@ -49,7 +49,7 @@ namespace Script
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            attacking = false;
+            _attacking = false;
             
             _skeletonAnimation.AnimationName = "walk";
         }

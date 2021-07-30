@@ -10,6 +10,8 @@ namespace Script
         private GameObject _weakMonster;
         private Monster _monster;
         private bool _isSpawnerNotNull;
+        
+        Factory spawnerFactory; 
 
         // Start is called before the first frame update
         private void Start()
