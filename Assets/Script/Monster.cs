@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Script
 {
-    public class Monster : MonoBehaviour
+    public class Monster : RecycleObject
     {
         [SerializeField] private float moveSpeed = 5f;
         private SkeletonAnimation _skeletonAnimation;
@@ -14,7 +14,7 @@ namespace Script
         public Action<float> attack;
 
         private bool _attacking = false;
-
+        
         // Start is called before the first frame update
         private void Start()
         {
@@ -25,9 +25,8 @@ namespace Script
         // Update is called once per frame
         private void Update()
         {
-            if (_attacking != false) return;
-            var transform1 = transform;
-            transform1.position += (-transform1.right) * (moveSpeed * Time.deltaTime);
+            if (!_attacking)
+                transform.position += (-transform.right) * (moveSpeed * Time.deltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -44,7 +43,7 @@ namespace Script
 
         private void OnCollisionStay2D(Collision2D other)
         {
-
+            
         }
 
         private void OnCollisionExit2D(Collision2D other)

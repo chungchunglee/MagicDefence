@@ -5,24 +5,25 @@ using UnityEngine;
 
 public class RecycleObject : MonoBehaviour
 {
-    protected bool isActivated = false;
+    private bool _isActivated = false;
 
-    public Action<RecycleObject> Destroyed;
-    public Action<RecycleObject> OutOfScreen;
-    protected Vector3 targetPosition;
+    public Action<RecycleObject> destroyed;
+    public Action<RecycleObject> outOfScreen;
+    private Vector3 _targetPosition;
 
-    public virtual void Activate(Vector3 position)
+    public void Activate(Vector3 position)
     {
-        isActivated = true;
+        _isActivated = true;
         transform.position = position;
     }
 
-    public virtual void Activate(Vector3 startPosition, Vector3 targetPosition)
+    public void Activate(Vector3 startPosition, Vector3 targetPosition)
     {
-        transform.position = startPosition;
-        this.targetPosition = targetPosition;
-        Vector3 dir = (targetPosition - startPosition).normalized;
-        transform.rotation = Quaternion.LookRotation(transform.forward, dir);
-        isActivated = true;
+        var transform1 = transform; // rider refactoring
+        transform1.position = startPosition;
+        this._targetPosition = targetPosition;
+        var dir = (targetPosition - startPosition).normalized;
+        transform.rotation = Quaternion.LookRotation(transform1.forward, dir);
+        _isActivated = true;
     }
 }

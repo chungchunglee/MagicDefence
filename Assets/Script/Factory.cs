@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class Factory
 {
-    List<RecycleObject> pool = new List<RecycleObject>();
-    int defaultPoolSize;
-    RecycleObject prefab;
+    readonly List<RecycleObject> _pool = new List<RecycleObject>();
+    private readonly int _defaultPoolSize;
+    readonly RecycleObject _prefab;
 
     public Factory(RecycleObject prefab, int defaultPoolSize = 5)
     {
-        this.prefab = prefab;
-        this.defaultPoolSize = defaultPoolSize;
+        this._prefab = prefab;
+        this._defaultPoolSize = defaultPoolSize;
 
-        Debug.Assert(this.prefab != null, "Prefab is null!");
+        Debug.Assert(this._prefab != null, "Prefab is null!");
     }
 
-    void CreatePool()
+    private void CreatePool()
     {
-        for(int i = 0; i < defaultPoolSize; i++)
+        for (var i = 0; i < _defaultPoolSize; i++)
         {
-            RecycleObject obj = GameObject.Instantiate(prefab) as RecycleObject;
+            var obj = Object.Instantiate(_prefab) as RecycleObject;
             obj.gameObject.SetActive(false);
-            pool.Add(obj);
+            _pool.Add(obj);
         }
     }
-    
+
     public RecycleObject Get()
     {
-        if(pool.Count == 0)
+        if (_pool.Count == 0)
         {
             CreatePool();
         }
 
-        int lastIndex = pool.Count - 1;
-        RecycleObject obj = pool[lastIndex];
-        pool.RemoveAt(lastIndex);
+        var lastIndex = _pool.Count - 1;
+        var obj = _pool[lastIndex];
+        _pool.RemoveAt(lastIndex);
         obj.gameObject.SetActive(true);
         return obj;
     }
@@ -43,7 +43,8 @@ public class Factory
     public void Restore(RecycleObject obj)
     {
         Debug.Assert(obj != null, "Null object to be returned!");
+        if (obj is null) return;
         obj.gameObject.SetActive(false);
-        pool.Add(obj);
+        _pool.Add(obj);
     }
 }
