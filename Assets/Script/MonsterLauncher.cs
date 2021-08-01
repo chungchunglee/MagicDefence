@@ -37,6 +37,13 @@ namespace Script
         {
             var weakMonster = _weakMonsterFactory.Get();
             weakMonster.transform.position = new Vector3(this.transform.position.x, -1.8f,0);
+            weakMonster.destroyed += OnWeakMonsterDestroyed;
+        }
+        
+        private void OnWeakMonsterDestroyed(RecycleObject diedWeakMonster)
+        {
+            diedWeakMonster.destroyed -= OnWeakMonsterDestroyed;
+            _weakMonsterFactory.Restore(diedWeakMonster);
         }
     }
 }

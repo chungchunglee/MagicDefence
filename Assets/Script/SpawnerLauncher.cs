@@ -29,7 +29,6 @@ namespace Script
 
         private void OnSpawnerDestroyed(RecycleObject diedSpawner)
         {
-            var lastBulletPosition = diedSpawner.transform.position;
             diedSpawner.destroyed -= OnSpawnerDestroyed;
             _spwanerFactory.Restore(diedSpawner);
         }
