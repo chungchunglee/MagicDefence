@@ -9,8 +9,8 @@ namespace Script
         private SkeletonAnimation _skeletonAnimation;
         private SpriteRenderer _spriteRenderer;
     
-        public bool leftMove = false;
-        public bool rightMove = false;
+        public bool leftMove;
+        public bool rightMove;
         private Vector3 _moveVelocity = Vector3.zero;
         private const float MoveSpeed = 5;
 
@@ -32,7 +32,7 @@ namespace Script
                 {
                     _skeletonAnimation.skeleton.ScaleX = -Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
                 }
-                catch(NullReferenceException ex)
+                catch(NullReferenceException)
                 {
                     _spriteRenderer.flipX = true;
                 }
@@ -45,7 +45,7 @@ namespace Script
                 {
                     _skeletonAnimation.skeleton.ScaleX = Mathf.Abs(_skeletonAnimation.skeleton.ScaleX);
                 }
-                catch(NullReferenceException ex)
+                catch(NullReferenceException)
                 {
                     _spriteRenderer.flipX = false;
                 }

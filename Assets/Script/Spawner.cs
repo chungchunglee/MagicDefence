@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = System.Diagnostics.Debug;
 
 namespace Script
 {
@@ -10,16 +10,16 @@ namespace Script
     {
         [SerializeField] private float moveSpeed = 5f;
         private const float Damage = 1;
-        
-        private float maxHp = 5f; 
-        private float hp;
+
+        private const float MAXHp = 5f;
+        private float _hp;
         private Slider _hpBar;
         private GameObject _hpBarPosition;
 
         private Monster _monster;
         
         public Action<float> spawnerAttack;
-        private bool _attacking = false;
+        private bool _attacking;
         
         // Start is called before the first frame update
         private void Start()
@@ -27,7 +27,7 @@ namespace Script
             _hpBarPosition = transform.Find("Canvas").transform.Find("Slider").gameObject; // Slider 위치를 캐릭터 위에 위치시키려고 쓰는 인스턴스
             _hpBar = _hpBarPosition.GetComponent<Slider>();
             
-            hp = maxHp; // 풀피로 시작
+            _hp = MAXHp; // 풀피로 시작
             _hpBar.value = 1; // UI. 풀피로 시작
         }
 
@@ -35,53 +35,46 @@ namespace Script
         private void Update()
         {
             if(!_attacking)
-                transform.position += transform.right * (moveSpeed * Time.deltaTime);
-            
+            {
+                var transform1 = transform;
+                transform1.position += transform1.right * (moveSpeed * Time.deltaTime);
+            }
+
+            Debug.Assert(Camera.main != null, "Camera.main != null");
             _hpBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.2f, 0)); // 오브젝트에 따른 HP Bar 위치 이동
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.transform.CompareTag("Weak Monster"))
-            {
-                _monster = other.collider.GetComponent<Monster>();
-                _monster.monsterAttack += OnDamaged; // spawner 와 monster 이벤트 연결
+            if (!other.transform.CompareTag("Weak Monster")) return;
+            _monster = other.collider.GetComponent<Monster>();
+            _monster.monsterAttack += OnDamaged; // spawner 와 monster 이벤트 연결
                 
-                _attacking = true;
+            _attacking = true;
                 
-                StartCoroutine(AttackCoroutine());
-            }
+            StartCoroutine(AttackCoroutine());
         }
 
-        private void OnCollisionStay2D(Collision2D other)
-        {
-            
-        }
-        
         private void OnCollisionExit2D(Collision2D other)
         {
-            if (other.transform.CompareTag("Weak Monster"))
-            {
-                _monster = other.collider.GetComponent<Monster>();
-                _monster.monsterAttack -= OnDamaged; // spawner 와 monster 에 연결된 이벤트 해제
+            if (!other.transform.CompareTag("Weak Monster")) return;
+            _monster = other.collider.GetComponent<Monster>();
+            _monster.monsterAttack -= OnDamaged; // spawner 와 monster 에 연결된 이벤트 해제
                 
-                _attacking = false;
+            _attacking = false;
                 
-                StopCoroutine(AttackCoroutine());
-            }
+            StopCoroutine(AttackCoroutine());
         }
         
         private void OnDamaged(float damage)
         {
-            hp -= damage;
-            _hpBar.value = (float)hp / (float)maxHp; // UI
-            if (hp == 0)
-            {
-                hp = maxHp; // 풀피로 저장. initialize
-                _hpBar.value = 1; // UI. 풀피로 저장. initialize
-                _monster.monsterAttack -= OnDamaged; // spawner 와 monster 에 연결된 이벤트 해제
-                destroyed?.Invoke(this); // 객체 회수 이벤트 호출        
-            }
+            _hp -= damage;
+            _hpBar.value = _hp / MAXHp; // UI
+            if (_hp != 0) return;
+            _hp = MAXHp; // 풀피로 저장. initialize
+            _hpBar.value = 1; // UI. 풀피로 저장. initialize
+            _monster.monsterAttack -= OnDamaged; // spawner 와 monster 에 연결된 이벤트 해제
+            destroyed?.Invoke(this); // 객체 회수 이벤트 호출        
         }
         
         private IEnumerator AttackCoroutine()

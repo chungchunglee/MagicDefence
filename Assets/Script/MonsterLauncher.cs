@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script
@@ -7,7 +6,6 @@ namespace Script
     public class MonsterLauncher : MonoBehaviour
     {
         [SerializeField] private Monster weakMonsterPrefab;
-        [SerializeField] private Monster strongMonsterPrefab;
 
         private Factory _weakMonsterFactory;
 
@@ -18,25 +16,27 @@ namespace Script
             StartCoroutine(WeakMonsterCoroutine());
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-            
-        }
-        
         private IEnumerator WeakMonsterCoroutine()
         {
             while (true)
             {
                 OnWeakMonsterSpawn();
-                yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
         private void OnWeakMonsterSpawn()
         {
             var weakMonster = _weakMonsterFactory.Get();
-            weakMonster.transform.position = new Vector3(this.transform.position.x, -1.8f,0);
+            var randomInt = Random.Range(0, 3); // y 축 랜덤좌표
+            var newY = randomInt switch
+            {
+                0 => -1.8f,
+                1 => 0.6f,
+                2 => 3.0f,
+                _ => 0
+            };
+            weakMonster.transform.position = new Vector3(this.transform.position.x, newY,0);
             weakMonster.destroyed += OnWeakMonsterDestroyed;
         }
         

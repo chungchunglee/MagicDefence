@@ -5,7 +5,7 @@ namespace Script
 {
     public class TouchMoveCam : MonoBehaviour
     {
-        private readonly float Speed = .5f;
+        private const float Speed = .5f;
         private Vector2 _nowPos, _prePos;
         private Vector3 _movePos;
         private Camera _camera;
