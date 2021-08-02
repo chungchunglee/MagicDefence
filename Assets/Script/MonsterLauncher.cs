@@ -8,11 +8,13 @@ namespace Script
     {
         [SerializeField] private Monster weakMonsterPrefab;
         [SerializeField] private Monster strongMonsterPrefab;
-        private Monster _weakMonster;
-        
+
+        private Factory _weakMonsterFactory;
+
         // Start is called before the first frame update
         private void Start()
         {
+            _weakMonsterFactory = new Factory(weakMonsterPrefab);
             StartCoroutine(WeakMonsterCoroutine());
         }
 
@@ -33,8 +35,15 @@ namespace Script
 
         private void OnWeakMonsterSpawn()
         {
-            _weakMonster = Instantiate(weakMonsterPrefab);
-            _weakMonster.transform.position = new Vector3(this.transform.position.x, -1.8f,0);
+            var weakMonster = _weakMonsterFactory.Get();
+            weakMonster.transform.position = new Vector3(this.transform.position.x, -1.8f,0);
+            weakMonster.destroyed += OnWeakMonsterDestroyed;
+        }
+        
+        private void OnWeakMonsterDestroyed(RecycleObject diedWeakMonster)
+        {
+            diedWeakMonster.destroyed -= OnWeakMonsterDestroyed;
+            _weakMonsterFactory.Restore(diedWeakMonster);
         }
     }
 }

@@ -5,35 +5,32 @@ namespace Script
     public class SpawnerLauncher : MonoBehaviour
     {
         [SerializeField] private Spawner spawnerPrefab;
-        private Spawner _spawner;
 
-        private GameObject _weakMonster;
-        private Monster _monster;
-        private bool _isSpawnerNotNull;
-
+        private Factory _spwanerFactory;
+        
         // Start is called before the first frame update
         private void Start()
         {
-            _isSpawnerNotNull = _spawner != null;
+            _spwanerFactory = new Factory(spawnerPrefab);
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (!_isSpawnerNotNull) return;
-            if (_spawner.hp == 0)
-            {
-                _monster.attack -= _spawner.OnDamaged;
-            }
+
         }
 
         public void OnSpawnerButtonPressed()
         {
-            _weakMonster = GameObject.FindWithTag("Weak Monster"); // 임시 테스트용
-            _monster = _weakMonster.GetComponent<Monster>();
-            _spawner = Instantiate(spawnerPrefab);
-            _spawner.transform.position = this.transform.position;
-            _monster.attack += _spawner.OnDamaged;
+            var spawner = _spwanerFactory.Get();
+            spawner.transform.position = new Vector3(this.transform.position.x, -0.8f,0);
+            spawner.destroyed += OnSpawnerDestroyed;
+        }
+
+        private void OnSpawnerDestroyed(RecycleObject diedSpawner)
+        {
+            diedSpawner.destroyed -= OnSpawnerDestroyed;
+            _spwanerFactory.Restore(diedSpawner);
         }
     }
 }
