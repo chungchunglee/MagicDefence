@@ -1294,9 +1294,11 @@ GameObject:
   - component: {fileID: 532265586}
   - component: {fileID: 532265585}
   - component: {fileID: 532265587}
+  - component: {fileID: 532265588}
+  - component: {fileID: 532265589}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1367,7 +1369,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &532265587
+--- !u!50 &532265587
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532265584}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!70 &532265588
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532265584}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.5, y: 2}
+  m_Direction: 0
+--- !u!114 &532265589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1376,19 +1415,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 532265584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a61de6fa4919764bb29aa65b68bc533, type: 3}
+  m_Script: {fileID: 11500000, guid: ba58a62fabd423f4fb0221e0a08046d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  maxHp: 100
-  maxMana: 30
-  maxMeat: 20
-  unitGenerateTime: 1
-  isDead: 0
-  HPBar: {fileID: 155871446}
-  MeatBar: {fileID: 116279756}
-  ManaBar: {fileID: 859931134}
-  ExpBar: {fileID: 1526571592}
+  hp: 50
+  attack: 0
+  attackSpeed: 0
+  isAttacked: 0
+  localTime: 0
+  moveSpeed: 0
 --- !u!1 &567146717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1862,8 @@ GameObject:
   - component: {fileID: 627993339}
   - component: {fileID: 627993338}
   - component: {fileID: 627993337}
+  - component: {fileID: 627993342}
+  - component: {fileID: 627993343}
   m_Layer: 0
   m_Name: Weak Monster
   m_TagString: Untagged
@@ -1844,7 +1881,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.010162771, y: 1.2031616}
@@ -1961,6 +1998,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627993342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627993336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba58a62fabd423f4fb0221e0a08046d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  attack: 1
+  attackSpeed: 1.5
+  isAttacked: 1
+  localTime: 0
+  moveSpeed: 5
+--- !u!50 &627993343
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627993336}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &690112394
 GameObject:
   m_ObjectHideFlags: 0

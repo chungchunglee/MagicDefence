@@ -13,40 +13,55 @@ public class TargetObject : MonoBehaviour
 
     protected bool isEnemy;
 
-    protected float hp;
-    protected float attack;
+    public float hp;
+    public float attack;
     public float attackSpeed;
     public bool isAttacked;
-    private float localTime;
-    
+    public float localTime = 0;
+
+    public float moveSpeed;
+
+    private Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D.velocity = new Vector2(-1, 0) * moveSpeed;
     }
     public void onDamaged(float damage)
     {
         hp -= damage;
+        Debug.Log("get Damaged and hp is" + hp);
     }
+    
 
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(isAttacked&&other.tag == "Player")
+    private void OnTriggerStay2D(Collider2D other) {
+        Debug.Log("Hit");
+        //if (other.tag == "Player")
         {
-            other.gameObject.GetComponent<TargetObject>.onDamaged(attack);
-            //에니메이션
-            ~isAttacked;
-        }
-        else
-        {
-            localTime+=Time.deltaTime;
-            if(localTime>=attackSpeed)
+            Debug.Log("Hit");
+            if(isAttacked)
             {
-                ~isAttacked;
-                localTime = 0;
+                rigidbody2D.velocity = new Vector2((float)0.01, 0);
+                //rigidbody2D.velocity = new Vector2(-1, 0) * moveSpeed;
+                other.gameObject.GetComponent<TargetObject>().onDamaged(attack);
+                //에니메이션
+                isAttacked=false;
+            }
+            else
+            {
+                localTime+=Time.deltaTime;
+                if(localTime>=attackSpeed)
+                {
+                    isAttacked=true;
+                    localTime = 0;
+                }
             }
         }
-
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        rigidbody2D.velocity = new Vector2(-1, 0) * moveSpeed;
     }
 
     // Update is called once per frame
