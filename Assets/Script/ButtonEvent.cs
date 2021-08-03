@@ -16,39 +16,21 @@ namespace Script
             _buttonController.Add(supporter.GetComponent<ButtonController>());
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-
-        }
-    
         public void LeftBtnDown()
         {
-            foreach (var variable in _buttonController)
-            {
-                variable.leftMove = true;
-            }
+            foreach (var variable in _buttonController) variable.leftMove = true;
         }
         public void LeftBtnUp()
         {
-            foreach (var variable in _buttonController)
-            {
-                variable.leftMove = false;
-            }
+            foreach (var variable in _buttonController) variable.leftMove = false;
         }
         public void RightBtnDown()
         {
-            foreach (var variable in _buttonController)
-            {
-                variable.rightMove = true;
-            }
+            foreach (var variable in _buttonController) variable.rightMove = true;
         }
         public void RightBtnUp()
         {
-            foreach (var variable in _buttonController)
-            {
-                variable.rightMove = false;
-            }
+            foreach (var variable in _buttonController) variable.rightMove = false;
         }
     }
 }
