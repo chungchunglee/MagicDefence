@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script
@@ -7,36 +6,41 @@ namespace Script
     public class MonsterLauncher : MonoBehaviour
     {
         [SerializeField] private Monster weakMonsterPrefab;
-        [SerializeField] private Monster strongMonsterPrefab;
+        [SerializeField] private StrongMonster strongMonsterPrefab;
 
         private Factory _weakMonsterFactory;
+        private Factory _strongMonsterFactory;
 
         // Start is called before the first frame update
         private void Start()
         {
             _weakMonsterFactory = new Factory(weakMonsterPrefab);
-            StartCoroutine(WeakMonsterCoroutine());
+            _strongMonsterFactory = new Factory(strongMonsterPrefab);
+            StartCoroutine(MonsterCoroutine());
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-            
-        }
-        
-        private IEnumerator WeakMonsterCoroutine()
+        private IEnumerator MonsterCoroutine()
         {
             while (true)
             {
                 OnWeakMonsterSpawn();
-                yield return new WaitForSeconds(5.0f);
+                OnStrongMonsterSpawn();
+                yield return new WaitForSeconds(2.5f);
             }
         }
 
         private void OnWeakMonsterSpawn()
         {
             var weakMonster = _weakMonsterFactory.Get();
-            weakMonster.transform.position = new Vector3(this.transform.position.x, -1.8f,0);
+            var randomInt = Random.Range(0, 3); // y축 랜덤좌표
+            var newY = randomInt switch
+            {
+                0 => -1.8f,
+                1 => 0.6f,
+                2 => 3.0f,
+                _ => 0
+            };
+            weakMonster.transform.position = new Vector3(this.transform.position.x, newY,0);
             weakMonster.destroyed += OnWeakMonsterDestroyed;
         }
         
@@ -44,6 +48,27 @@ namespace Script
         {
             diedWeakMonster.destroyed -= OnWeakMonsterDestroyed;
             _weakMonsterFactory.Restore(diedWeakMonster);
+        }
+        
+        private void OnStrongMonsterSpawn()
+        {
+            var strongMonster = _strongMonsterFactory.Get();
+            var randomInt = Random.Range(0, 3); // y축 랜덤좌표
+            var newY = randomInt switch
+            {
+                0 => -1.8f,
+                1 => 0.6f,
+                2 => 3.0f,
+                _ => 0
+            };
+            strongMonster.transform.position = new Vector3(this.transform.position.x, newY,0);
+            strongMonster.destroyed += OnStrongMonsterDestroyed;
+        }
+        
+        private void OnStrongMonsterDestroyed(RecycleObject diedStrongMonster)
+        {
+            diedStrongMonster.destroyed -= OnStrongMonsterDestroyed;
+            _strongMonsterFactory.Restore(diedStrongMonster);
         }
     }
 }

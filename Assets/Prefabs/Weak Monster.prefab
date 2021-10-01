@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2884796855481735315}
   m_Layer: 0
   m_Name: Weak Monster
-  m_TagString: Weak Monster
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9eef242a6c830746a02d2af6028b8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActivated: 0
   moveSpeed: 5
+  _skeletonAnimation: {fileID: 0}
+  _hp: 0
+  _hpBar: {fileID: 0}
+  _hpBarPosition: {fileID: 0}
+  _attacking: 0
 --- !u!1 &4262614893374275320
 GameObject:
   m_ObjectHideFlags: 0
